@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.viewbinding.ViewBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
+@Suppress("unused")
 abstract class BaseBottomSheetDialogFragment<VB : ViewBinding> : BottomSheetDialogFragment() {
 
     private var _binding: VB? = null
@@ -15,6 +16,8 @@ abstract class BaseBottomSheetDialogFragment<VB : ViewBinding> : BottomSheetDial
     protected abstract fun onCreateView(inflater: LayoutInflater, container: ViewGroup?): VB
     protected abstract fun onViewCreated(binding: VB, savedInstanceState: Bundle?)
     protected open fun onDestroyView(binding: VB) = Unit
+
+    fun requireBinding() = _binding ?: error("Binding object accessed before onCreateView or after onDestroyView")
 
     final override fun onCreateView(
         inflater: LayoutInflater,
