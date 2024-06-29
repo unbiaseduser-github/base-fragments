@@ -11,6 +11,7 @@ android {
     publishing {
         singleVariant("release") {
             withSourcesJar()
+            withJavadocJar()
         }
     }
 
@@ -55,6 +56,7 @@ afterEvaluate {
                 pom {
                     name.set("base-fragments")
                     description.set("Use view binding with fragments with less boilerplate")
+                    url.set("https://github.com/unbiaseduser-github/base-fragments")
 
                     licenses {
                         license {
@@ -68,8 +70,14 @@ afterEvaluate {
                             id.set("unbiaseduser")
                             name.set("Dang Quang Trung")
                             email.set("quangtrung02hn16@gmail.com")
-                            url.set("https://github.com/unbiaseduser")
+                            url.set("https://github.com/unbiaseduser-github")
                         }
+                    }
+
+                    scm {
+                        connection.set("scm:git:git://github.com/unbiaseduser-github/base-fragments.git")
+                        developerConnection.set("scm:git:ssh://github.com:unbiaseduser-github/base-fragments.git")
+                        url.set("https://github.com/unbiaseduser-github/base-fragments/tree/master")
                     }
                 }
             }
