@@ -6,6 +6,13 @@ import androidx.appcompat.app.AppCompatDialogFragment
 import androidx.viewbinding.ViewBinding
 
 @Suppress("unused")
+@Deprecated(
+    message = "Use ViewBindingDialogFragment instead.",
+    replaceWith = ReplaceWith(
+        expression = "ViewBindingDialogFragment",
+        imports = ["com.sixtyninefourtwenty.basefragments.ViewBindingDialogFragment"]
+    )
+)
 abstract class BaseDialogFragment<VB : ViewBinding> : AppCompatDialogFragment() {
 
     private var _binding: VB? = null

@@ -8,6 +8,13 @@ import androidx.viewbinding.ViewBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 @Suppress("unused")
+@Deprecated(
+    message = "Use ViewBindingBottomSheetDialogFragment instead.",
+    replaceWith = ReplaceWith(
+        expression = "ViewBindingBottomSheetDialogFragment",
+        imports = ["com.sixtyninefourtwenty.basefragments.ViewBindingBottomSheetDialogFragment"]
+    )
+)
 abstract class BaseBottomSheetDialogFragment<VB : ViewBinding> : BottomSheetDialogFragment() {
 
     private var _binding: VB? = null

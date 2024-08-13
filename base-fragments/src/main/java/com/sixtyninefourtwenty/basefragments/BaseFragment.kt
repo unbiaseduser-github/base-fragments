@@ -8,6 +8,13 @@ import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 
 @Suppress("unused")
+@Deprecated(
+    message = "Use ViewBindingFragment instead.",
+    replaceWith = ReplaceWith(
+        expression = "ViewBindingFragment",
+        imports = ["com.sixtyninefourtwenty.basefragments.ViewBindingFragment"]
+    )
+)
 abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
     private var _binding: VB? = null
